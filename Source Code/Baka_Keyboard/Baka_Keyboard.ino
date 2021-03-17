@@ -7,17 +7,30 @@ void setup() {
 }
 
 void loop() {
+
   if (digitalRead(9) == LOW) {
-    Keyboard.press('1');
+    Keyboard.press(KEY_LEFT_CTRL);
     delay(10);
   }
 
+  if (digitalRead(9) == HIGH) {
+    Keyboard.release(KEY_LEFT_CTRL);
+    delay(50);
+  }
+
+  //131 SuperL
+  //207 Scroll_Lock
+  //209 Insert
+
   if (digitalRead(10) == LOW) {
-    Keyboard.press('0');
+    Keyboard.press(131);
     delay(10);
   }
-  
-  Keyboard.releaseAll();
-  delay(50);
+
+  if (digitalRead(10) == HIGH) {
+    Keyboard.release(131);
+    delay(50);
+  }
 }
+
 
